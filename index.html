@@ -13,7 +13,9 @@
         <div class="profile-card">
             <header class="header">
                 <h1>Hi, I'm <span>Sammi</span></h1>
-                <p class="subtitle">Beginner Python Learner</p>
+                <div class="subtitle-container">
+                    <p class="subtitle" id="typewriter"></p><span class="cursor"></span>
+                </div>
             </header>
 
             <div class="contact-section">
@@ -21,18 +23,19 @@
                 
                 <div class="links-container">
                     <a href="mailto:sudosammi@gmail.com" class="link-card">
-                        <i data-lucide="mail"></i>
-                        <span>Email</span>
+                        <i data-lucide="mail"></i><span>Email</span>
                     </a>
 
                     <a href="https://github.com/sudosammi_" target="_blank" class="link-card">
-                        <i data-lucide="github"></i>
-                        <span>GitHub</span>
+                        <i data-lucide="github"></i><span>GitHub</span>
                     </a>
 
                     <a href="https://instagram.com/gusainsammi" target="_blank" class="link-card">
-                        <i data-lucide="instagram"></i>
-                        <span>Instagram</span>
+                        <i data-lucide="instagram"></i><span>Instagram</span>
+                    </a>
+
+                    <a href="https://wa.me/917017817003" target="_blank" class="link-card">
+                        <i data-lucide="message-circle" class="wa-icon"></i><span>WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -40,8 +43,21 @@
     </div>
 
     <script>
-      lucide.createIcons();
+        lucide.createIcons();
+
+        // Corrected Text: Beginner Python Learner
+        const text = "Beginner Python Learner";
+        let index = 0;
+        const speed = 120; 
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
     </script>
 </body>
 </html>
-
