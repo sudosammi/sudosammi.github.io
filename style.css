@@ -1,100 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammi | Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
 
-body {
-    background-color: #0d0d12; /* Deep dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: white;
-}
+    <div class="container">
+        <div class="profile-card">
+            <header class="header">
+                <h1>Hi, I'm <span>Sammi</span></h1>
+                <div class="subtitle-container">
+                    <p class="subtitle" id="typewriter"></p><span class="cursor"></span>
+                </div>
+            </header>
 
-.container {
-    perspective: 1000px; /* Essential for 3D effect */
-}
+            <div class="contact-section">
+                <h2 class="section-title">CONTACT</h2>
+                
+                <div class="links-container">
+                    <a href="mailto:sudosammi@gmail.com" class="link-card">
+                        <i data-lucide="mail"></i><span>Email</span>
+                    </a>
 
-.profile-card {
-    background: #16161d;
-    padding: 2.5rem;
-    border-radius: 24px;
-    width: 350px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: transform 0.5s ease;
-}
+                    <a href="https://github.com/sudosammi_" target="_blank" class="link-card">
+                        <i data-lucide="github"></i><span>GitHub</span>
+                    </a>
 
-/* Header Styling */
-.header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+                    <a href="https://instagram.com/gusainsammi" target="_blank" class="link-card">
+                        <i data-lucide="instagram"></i><span>Instagram</span>
+                    </a>
 
-.header h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-}
+                    <a href="https://wa.me/917017817003" target="_blank" class="link-card">
+                        <i data-lucide="message-circle" class="wa-icon"></i><span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.header h1 span {
-    color: #8b5cf6; /* Python-ish Purple/Blue tint */
-}
+    <script>
+        lucide.createIcons();
 
-.subtitle {
-    color: #888;
-    font-size: 0.9rem;
-    margin-top: 5px;
-    letter-spacing: 1px;
-}
+        // Simple Typewriter Logic
+        const text = "Python Learner";
+        let index = 0;
+        const speed = 150; 
 
-/* Contact Section */
-.section-title {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: #f0f0f0;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    font-family: serif;
-}
-
-.links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.link-card {
-    background: #1c1c24;
-    padding: 16px 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-style: italic;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid transparent;
-}
-
-/* 3D Animation & Optimization */
-.link-card i {
-    margin-right: 15px;
-    width: 20px;
-    height: 20px;
-}
-
-.link-card:hover {
-    background: #252530;
-    transform: translateX(10px) translateZ(20px) scale(1.02);
-    border-color: rgba(139, 92, 246, 0.5);
-    box-shadow: -10px 10px 20px rgba(0,0,0,0.3);
-}
-
-.link-card:active {
-    transform: scale(0.98);
-}
-
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
