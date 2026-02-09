@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sammi | Profile</title>
+    <title>Sammi :: Timeline Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <div class="container">
+    <nav>
+        <div class="logo">SAMMI.DEV</div>
+        <div class="menu">MENU +</div>
+    </nav>
+
+    <section class="year-section" id="y2025">
+        <div class="year-number">2025</div>
+        <div class="content-box">
+            <h1 class="main-title">THE<br>BEGINNING</h1>
+            <p class="subtitle">Cybersecurity & Python<br>Initiated Dec 2025</p>
+            <p style="color: #8b5cf6; margin-top: 10px; font-size: 0.8rem;">[ Click Photo for Profile ]</p>
+        </div>
+        
+        <div class="image-container" id="profileTrigger">
+            <img src="profile.png" alt="Sammi Portrait">
+        </div>
+    </section>
+
+    <section class="year-section future" id="y2026">
+        <div class="year-number">2026</div>
+        <div class="content-box">
+            <h1 class="main-title">SYSTEM<br>UPGRADE</h1>
+            <p class="subtitle">Loading Projects...<br>Status: Pending</p>
+        </div>
+    </section>
+
+    <section class="year-section future" id="y2027">
+        <div class="year-number">2027</div>
+        <div class="content-box">
+            <h1 class="main-title">FULL<br>STACK</h1>
+            <p class="subtitle">Vision Locked.</p>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="profileModal">
         <div class="profile-card">
+            <button class="close-btn" id="closeBtn">×</button>
+            
             <header class="header">
                 <h1>Hi, I'm <span>Sammi</span></h1>
                 <div class="subtitle-container">
-                    <p class="subtitle" id="typewriter"></p><span class="cursor"></span>
+                    <p class="subtitle" id="card-typewriter"></p><span class="cursor"></span>
                 </div>
             </header>
 
@@ -26,7 +62,7 @@
                         <i data-lucide="mail"></i><span>Email</span>
                     </a>
 
-                    <a href="https://github.com/sudosammi" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://github.com/sudosammi" target="_blank" class="link-card">
                         <i data-lucide="github"></i><span>GitHub</span>
                     </a>
 
@@ -42,21 +78,6 @@
         </div>
     </div>
 
-    <script>
-        lucide.createIcons();
-
-        const text = "Beginner Python Learner";
-        let index = 0;
-        const speed = 120; 
-
-        function typeWriter() {
-            if (index < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
