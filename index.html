@@ -11,18 +11,23 @@
 
     <nav>
         <div class="logo">SAMMI.DEV</div>
-        <div class="menu">MENU +</div>
-    </nav>
+        </nav>
 
     <section class="year-section" id="y2025">
-        <div class="year-number">2025</div>
+        <div class="year-number desktop-only">2025</div>
+        
         <div class="content-box">
+            <p class="mobile-year mobile-only">2025</p>
             <h1 class="main-title">THE<br>BEGINNING</h1>
             <p class="subtitle">Cybersecurity & Python<br>Initiated Dec 2025</p>
-            <p style="color: #8b5cf6; margin-top: 10px; font-size: 0.8rem;">[ Click Photo for Profile ]</p>
+            
+            <div class="mobile-actions mobile-only">
+                <img src="profile.png" alt="Mini Profile" class="mini-profile" id="mobileProfileTrigger">
+                <button class="contact-btn-mobile" id="mobileContactBtn">CONTACT ME</button>
+            </div>
         </div>
         
-        <div class="image-container" id="profileTrigger">
+        <div class="image-container desktop-only" id="profileTriggerDesktop">
             <img src="profile.png" alt="Sammi Portrait">
         </div>
     </section>
@@ -46,33 +51,19 @@
     <div class="modal-overlay" id="profileModal">
         <div class="profile-card">
             <button class="close-btn" id="closeBtn">×</button>
-            
             <header class="header">
                 <h1>Hi, I'm <span>Sammi</span></h1>
                 <div class="subtitle-container">
                     <p class="subtitle" id="card-typewriter"></p><span class="cursor"></span>
                 </div>
             </header>
-
             <div class="contact-section">
                 <h2 class="section-title">CONTACT</h2>
-                
                 <div class="links-container">
-                    <a href="mailto:sudosammi@gmail.com" class="link-card">
-                        <i data-lucide="mail"></i><span>Email</span>
-                    </a>
-
-                    <a href="https://github.com/sudosammi" target="_blank" class="link-card">
-                        <i data-lucide="github"></i><span>GitHub</span>
-                    </a>
-
-                    <a href="https://instagram.com/gusainsammi" target="_blank" class="link-card">
-                        <i data-lucide="instagram"></i><span>Instagram</span>
-                    </a>
-
-                    <a href="https://wa.me/917017817003" target="_blank" class="link-card">
-                        <i data-lucide="message-circle" class="wa-icon"></i><span>WhatsApp</span>
-                    </a>
+                    <a href="mailto:sudosammi@gmail.com" class="link-card"><i data-lucide="mail"></i><span>Email</span></a>
+                    <a href="https://github.com/sudosammi" target="_blank" class="link-card"><i data-lucide="github"></i><span>GitHub</span></a>
+                    <a href="https://instagram.com/gusainsammi" target="_blank" class="link-card"><i data-lucide="instagram"></i><span>Instagram</span></a>
+                    <a href="https://wa.me/917017817003" target="_blank" class="link-card"><i data-lucide="message-circle" class="wa-icon"></i><span>WhatsApp</span></a>
                 </div>
             </div>
         </div>
